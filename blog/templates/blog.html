@@ -1,0 +1,34 @@
+{% extends "header.html" %}
+
+{% block title %}
+<title>Infinity - Here is a blog post</title>
+{% endblock %}
+
+{% block subinherit %}
+        <h1 class="text-uppercase mb-0">Welcome Blog</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Infinity Developer - Here is Blog Page</h2>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+          	<br><br><br><br><h1>{{title}}</h1>
+          	{% for post in query %}
+          	   <h2>title Name :- {{post.title}}</h2><br>
+          	   <p1>post Content:-{{post.content}}</p1><br>
+          	   <p1><small>post on : {{post.create}}</small></p1><br>
+          	   {% if post.image %}
+          	   <img class="img-responsive img-hover" src="{{post.image.url}}"alt=""height="600px"width="600px">
+          	   {% endif %}
+          	   <br>
+          	{% endfor %}
+            </div>
+            <div class="col-md-4 mb-5 mb-lg-0">
+            	<h2>Latest post<h2>
+          </div>
+    </div>
+
+
+
+{% endblock %}
